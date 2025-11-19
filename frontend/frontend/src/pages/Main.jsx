@@ -70,7 +70,67 @@ const Main = () => {
             },
           }}
         >
-          Practicum 3 
+          Practicum 3  toggle hide and show
+        </Typography>
+         <Typography
+          component={Link}
+          to="/practicum4"
+          sx={{
+            fontSize: "24px",
+            fontFamily: "Arial, sans-serif",
+            color: "blue",
+            textDecoration: "none",
+            "&:hover": {
+              textDecoration: "underline",
+            },
+          }}
+        >
+          Practicum 4
+        </Typography>
+         <Typography
+          component={Link}
+          to="/practicum5"
+          sx={{
+            fontSize: "24px",
+            fontFamily: "Arial, sans-serif",
+            color: "blue",
+            textDecoration: "none",
+            "&:hover": {
+              textDecoration: "underline",
+            },
+          }}
+        >
+          Practicum 5 DATA  fetching with filter or search
+        </Typography>
+        <Typography
+          component={Link}
+          to="/practicum6"
+          sx={{
+            fontSize: "24px",
+            fontFamily: "Arial, sans-serif",
+            color: "blue",
+            textDecoration: "none",
+            "&:hover": {
+              textDecoration: "underline",
+            },
+          }}
+        >
+          Practicum 6
+        </Typography>
+         <Typography
+          component={Link}
+          to="/practicum7"
+          sx={{
+            fontSize: "24px",
+            fontFamily: "Arial, sans-serif",
+            color: "blue",
+            textDecoration: "none",
+            "&:hover": {
+              textDecoration: "underline",
+            },
+          }}
+        >
+          Practicum 7
         </Typography>
       </Stack>
     </Box>
