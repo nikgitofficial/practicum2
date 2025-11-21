@@ -9,6 +9,7 @@ import Practicum4 from "./pages/practicum/Practicum4.jsx";
 import Practicum5 from "./pages/practicum/Practicum5.jsx";
 import Practicum6 from "./pages/practicum/Practicum6.jsx";
 import Practicum7 from "./pages/practicum/Practicum7.jsx";
+import Practicum8 from "./pages/practicum/Practicum8.jsx";
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
         <Route path="/practicum5" element={<Practicum5 />} />
         <Route path="/practicum6" element={<Practicum6 />} />
         <Route path="/practicum7" element={<Practicum7 />} />
+        <Route path="/practicum8" element={<Practicum8 />} />
       </Routes>
     </Router>
   );

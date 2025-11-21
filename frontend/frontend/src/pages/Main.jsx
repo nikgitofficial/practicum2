@@ -1,138 +1,68 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Box, Stack, Typography } from "@mui/material";
+import { Box, Stack, Typography, Card, CardActionArea } from "@mui/material";
+
+const navItems = [
+  { label: "Practicum 1", to: "/practicum1" },
+  { label: "Practicum 2 — Basic Fetching API", to: "/practicum2" },
+  { label: "Practicum 3 — Toggle Hide/Show", to: "/practicum3" },
+  { label: "Practicum 4", to: "/practicum4" },
+  { label: "Practicum 5 — Fetching + Filter", to: "/practicum5" },
+  { label: "Practicum 6", to: "/practicum6" },
+  { label: "Practicum 7 — 2028 Signature Pad", to: "/practicum7" },
+  { label: "Practicum 8", to: "/practicum8" },
+];
 
 const Main = () => {
   return (
     <Box
       sx={{
-        height: "30vh",               // full viewport height
+        minHeight: "100vh",
         display: "flex",
-        justifyContent: "center",       // horizontal center
-        alignItems: "center",           // vertical center
-        textAlign: "center",
+        justifyContent: "center",
+        alignItems: "center",
+        p: 3,
+        background: "linear-gradient(135deg, #e3f2fd, #e8eaf6)",
       }}
     >
-      <Stack spacing={2} alignItems="center">
+      <Box sx={{ width: "100%", maxWidth: 600 }}>
         <Typography
           variant="h3"
           sx={{
-            fontWeight: "bold",
-            fontSize: "48px",
-            color: "black",
-            fontFamily: "Arial, sans-serif",
-            fontStyle: "normal",
+            fontWeight: 700,
+            textAlign: "center",
+            mb: 4,
+            letterSpacing: 1,
           }}
         >
           Main Page
         </Typography>
 
-        <Typography
-          component={Link}
-          to="/practicum1"
-          sx={{
-            fontSize: "24px",
-            fontFamily: "Arial, sans-serif",
-            color: "blue",
-            textDecoration: "none",
-            "&:hover": {
-              textDecoration: "underline",
-            },
-          }}
-        >
-          Practicum 1
-        </Typography>
-         <Typography
-          component={Link}
-          to="/practicum2"
-          sx={{
-            fontSize: "24px",
-            fontFamily: "Arial, sans-serif",
-            color: "blue",
-            textDecoration: "none",
-            "&:hover": {
-              textDecoration: "underline",
-            },
-          }}
-        >
-          Practicum 2 Basic Fetching data api
-        </Typography>
-        <Typography
-          component={Link}
-          to="/practicum3"
-          sx={{
-            fontSize: "24px",
-            fontFamily: "Arial, sans-serif",
-            color: "blue",
-            textDecoration: "none",
-            "&:hover": {
-              textDecoration: "underline",
-            },
-          }}
-        >
-          Practicum 3  toggle hide and show
-        </Typography>
-         <Typography
-          component={Link}
-          to="/practicum4"
-          sx={{
-            fontSize: "24px",
-            fontFamily: "Arial, sans-serif",
-            color: "blue",
-            textDecoration: "none",
-            "&:hover": {
-              textDecoration: "underline",
-            },
-          }}
-        >
-          Practicum 4
-        </Typography>
-         <Typography
-          component={Link}
-          to="/practicum5"
-          sx={{
-            fontSize: "24px",
-            fontFamily: "Arial, sans-serif",
-            color: "blue",
-            textDecoration: "none",
-            "&:hover": {
-              textDecoration: "underline",
-            },
-          }}
-        >
-          Practicum 5 DATA  fetching with filter or search
-        </Typography>
-        <Typography
-          component={Link}
-          to="/practicum6"
-          sx={{
-            fontSize: "24px",
-            fontFamily: "Arial, sans-serif",
-            color: "blue",
-            textDecoration: "none",
-            "&:hover": {
-              textDecoration: "underline",
-            },
-          }}
-        >
-          Practicum 6
-        </Typography>
-         <Typography
-          component={Link}
-          to="/practicum7"
-          sx={{
-            fontSize: "24px",
-            fontFamily: "Arial, sans-serif",
-            color: "blue",
-            textDecoration: "none",
-            "&:hover": {
-              textDecoration: "underline",
-            },
-          }}
-        >
-          Practicum 7
-        </Typography>
-      </Stack>
+        <Stack spacing={2}>
+          {navItems.map((item, i) => (
+            <Card
+              key={i}
+              elevation={3}
+              sx={{ borderRadius: 3, overflow: "hidden" }}
+            >
+              <CardActionArea
+                component={Link}
+                to={item.to}
+                sx={{ p: 2 }}
+              >
+                <Typography
+                  sx={{
+                    fontSize: 20,
+                    fontWeight: 500,
+                  }}
+                >
+                  {item.label}
+                </Typography>
+              </CardActionArea>
+            </Card>
+          ))}
+        </Stack>
+      </Box>
     </Box>
   );
 };
