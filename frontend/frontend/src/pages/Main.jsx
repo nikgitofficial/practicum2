@@ -11,6 +11,7 @@ const navItems = [
   { label: "Practicum 6", to: "/practicum6" },
   { label: "Practicum 7 — 2028 Signature Pad", to: "/practicum7" },
   { label: "Practicum 8", to: "/practicum8" },
+  { label: "Practicum 9", to: "/practicum9" },
 ];
 
 const Main = () => {

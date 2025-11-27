@@ -1,25 +1,16 @@
 import React, { useState } from "react";
 
-const Practicum8: React.FC = () => {
+const Practicum8 = () => {
 
-  const arr : number[] = [1,2,3,4];
-  const text: string = "nickpacs123";
- 
-  console.log(arr)
-  console.log(text)
+  const add = (a:number ,b:number) => {
+    return a + b;
+  };
 
-
-
-
-
-
+  console.log(add(1, 2)); // 3
 
   return (
     <>
-   
-  <p>{arr}</p>
-  <p>{text}</p>
-     
+      {add}
     </>
   );
 };
