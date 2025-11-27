@@ -1,56 +1,24 @@
-import React,{useState,useEffect} from "react";
+import React from "react";
 
 const Practicum9 = () => {
-  const [data,setData] = useState([]);
-  const [search, setSearch] = useState("");
-
-  const getdata = async () =>{
-         try{
-          const res = await fetch("https://jsonplaceholder.typicode.com/users");
-          const json = await res.json();
-          setData(json);
-         }catch(err){
-          console.error("failed to laod data",err);
-
-         }
-  }
- 
-  useEffect(()=>{
-    getdata();
-  },[])
-
-  const totaluser = data.reduce(acc => acc + 1,0)
-
-  const totalUsers = data.length;
-
-  const filteredData = data.filter((user) =>
-    user.name.toLowerCase().includes(search.toLowerCase())
-  );
-
- 
-
-
-
-
-     
+  const students = [
+    { name: "Alice", score: 85 },
+    { name: "Bob", score: 92 },
+    { name: "Charlie", score: 68 },
+    { name: "David", score: 74 },
+    { name: "Eve", score: 91 }
+  ];
 
   return (
     <>
-    
-    <p>Total Users using reduce:{totaluser}</p>
-     <p>Total Users using length:{totalUsers}</p>
-     
-      <input
-        type="search"
-        placeholder="search"
-        value={search}
-        onChange={(e) => setSearch(e.target.value)}
-      />
-    <ol>{filteredData.map((user)=>(
-      <li key={user.id}>{user.name}</li>
-
-    ))}</ol>
-    
+      <h2>Student Scores</h2>
+      <ul>
+        {students.map((student, index) => (
+          <li key={index}>
+            {student.name}: {student.score}
+          </li>
+        ))}
+      </ul>
     </>
   );
 };

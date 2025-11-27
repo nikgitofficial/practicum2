@@ -29,6 +29,7 @@ const Practicum1 = () => {
         const res = await axios.put(`http://localhost:5000/api/users/${editingId}`, { firstname });
         setUsers(users.map(u => (u._id === editingId ? res.data : u)));
         setEditingId(null);
+        alert("editing successfuly")
       } else {
         const res = await axios.post("http://localhost:5000/api/users", { firstname });
         setUsers([...users, res.data]);
@@ -45,16 +46,20 @@ const Practicum1 = () => {
     setEditingId(user._id);
   };
 
-  const handleDelete = async (id) => {
-    if (!window.confirm("Are you sure you want to delete this user?")) return;
-    try {
-      await axios.delete(`http://localhost:5000/api/users/${id}`);
-      setUsers(users.filter(u => u._id !== id));
-    } catch (err) {
-      console.error(err);
-      alert("Error deleting user");
-    }
-  };
+const handleDelete = async (id) => {
+  if (!window.confirm("Are you sure you want to delete this user?")) return;
+
+  try {
+    await axios.delete(`http://localhost:5000/api/users/${id}`);
+    setUsers(prevUsers => prevUsers.filter(u => u._id !== id));
+    alert("Deleted successfully");
+  } catch (err) {
+    console.error(err);
+    const message = err.response?.data?.message || "Error deleting user";
+    alert(message);
+  }
+};
+
 
   return (
     <Box sx={{ minHeight: "50vh", display: "flex", justifyContent: "center", alignItems: "center", textAlign: "center" }}>

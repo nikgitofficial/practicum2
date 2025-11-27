@@ -17,6 +17,7 @@ const App = () => {
     <Router>
       <Routes>
         <Route path="/" element={<Main />} />
+        <Route path="/practicum1" element={<Practicum1 />} />
         <Route path="/practicum2" element={<Practicum2 />} />
         <Route path="/practicum3" element={<Practicum3 />} />
         <Route path="/practicum4" element={<Practicum4 />} />
